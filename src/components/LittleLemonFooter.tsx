@@ -6,9 +6,9 @@ export default class LittleLemonFooter extends Component {
   render() {
     return (
         <View style={styles.footerContainer}>
-        <Text style={styles.footerText}>
-           All rights reserved by Little Lemon, 2024
-        </Text>
+          <Text style={styles.footerText}>
+            All rights reserved by Little Lemon, 2024
+          </Text>
     </View>
     )
   }

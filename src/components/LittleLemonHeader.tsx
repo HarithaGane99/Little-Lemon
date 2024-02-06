@@ -16,7 +16,7 @@ const LittleLemonHeader = () => {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        backgroundColor: '#F4CE14',
+        backgroundColor: '#EE9972',
         justifyContent: 'center', // Center text vertically
         alignItems: 'center', // Center text horizontally
       },

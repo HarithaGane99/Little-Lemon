@@ -16,7 +16,7 @@ export default class LittleLemonFooter extends Component {
 
 const styles = StyleSheet.create({
     footerContainer: {
-        backgroundColor: '#F4CE14',
+        backgroundColor: '#EE9972',
         marginBottom:10,
       },
       footerText: {

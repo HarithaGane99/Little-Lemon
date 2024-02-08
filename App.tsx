@@ -19,9 +19,8 @@ export class App extends Component {
         {/* <WelcomeScreen/> */}
         <MenuItems/>
       </View>
-      <View style={{ backgroundColor: '#495E57',flex:0.05 }}>
-        <LittleLemonFooter/>
-      </View>
+      {/* <View style={{ backgroundColor: '#495E57',flex:0.05 }}>
+      </View> */}
       </>
     );
   }

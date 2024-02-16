@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { SectionList,  StyleSheet, Text, View } from 'react-native'
-import React from 'react';
+import { SectionList,  StyleSheet, Text, View, Pressable} from 'react-native';
+import React, { useState } from 'react';
 
 const menuItemsToDisplay = [
   {
@@ -62,7 +62,8 @@ const Item = ({ name,price}) => {
 }
 
 
-const MenuItems = () => {
+const MenuItems = ({navigation}) => {
+  const [showMenu, setShowMenu] = useState(false);
 
   const renderItem = ({item}) => <Item name={item.name} price={item.price}/>;
 
@@ -72,6 +73,16 @@ const MenuItems = () => {
     </View>
   )
   return (
+    <>
+    <Pressable 
+      style={styles.button}
+      onPress={()=>{
+        setShowMenu(!showMenu);
+      }}>
+        <Text style={styles.buttonText}>
+          {showMenu ? 'Home' : 'View Menu'}
+        </Text>
+    </Pressable>
       <View style={styles.menuContainer} >
         <SectionList
           keyExtractor={(item,index)=>item+index}
@@ -81,6 +92,11 @@ const MenuItems = () => {
           ListFooterComponent={Footer}
         />
       </View>
+      <Pressable onPress={()=>navigation.goBack()}>
+        <Text style={styles.buttonText}>Go Back</Text>
+      </Pressable>
+    </>
+   
   )
 }
 
@@ -130,5 +146,20 @@ const styles = StyleSheet.create({
   headerStyle: {
     backgroundColor: '#F4CE14',
   },
+  button:{
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 40,
+    backgroundColor: '#EDEFEE',
+    borderColor: '#EDEFEE',
+    borderWidth: 2,
+    borderRadius: 12,
+  },
+  buttonText:{
+    color: '#333333',
+    textAlign: 'center',
+    fontSize: 32,
+  }
 })
 

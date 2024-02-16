@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import {KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 
 const Feedback = () => {
@@ -25,6 +25,7 @@ const Feedback = () => {
           onChangeText={onChangeFirstName}
           style={styles.input}
           placeholder="First Name"
+          onFocus={()=>Alert.alert("First Name is focused")}
         />
         <TextInput
           value={lastName}

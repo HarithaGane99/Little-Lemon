@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { KeyboardAvoidingView, ScrollView, StyleSheet, Text, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import { KeyboardAvoidingView, Pressable, ScrollView, StyleSheet, Text, TextInput } from 'react-native'
+import React, { useState } from 'react';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
 
     const [email,onEmailChange]=useState('');
     const [password,onPasswordChange]=useState('');
@@ -26,6 +26,9 @@ const LoginScreen = () => {
                 keyboardType={'default'}
                 secureTextEntry={true}
             />
+            <Pressable onPress={()=>navigation.navigate('Welcome')} style={styles.button}>
+              <Text style={styles.buttonText}>Log In</Text>
+            </Pressable>
         </ScrollView>
     </KeyboardAvoidingView>
     
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         padding: 20,
         marginVertical: 8,
-        color: '#EDEFEE',
+        color: '#000',
         textAlign: 'center',
       },
       input:{
@@ -57,7 +60,20 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         fontSize: 16,
-        borderColor: '#EDEFEE',
+        borderColor: '#ccc',
         backgroundColor: '#EDEFEE',
+      },
+      buttonText:{
+        fontSize:28,
+        color:'#000',
+        textAlign:'center',
+
+      },
+      button:{
+        backgroundColor:'#0394fc',
+        margin:100,
+        borderRadius:18,
+        height:60,
+        justifyContent:'center',
       }
 })

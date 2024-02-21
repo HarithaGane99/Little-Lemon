@@ -7,6 +7,7 @@ import LittleLemonFooter from './src/components/LittleLemonFooter';
 import LoginScreen from './src/components/LoginScreen';
 import WelcomeScreen from './src/components/WelcomeScreen';
 import { createStackNavigator } from '@react-navigation/stack';
+import SubscribeScreen from './src/components/SubscribeScreen';
 
 const Stack = createStackNavigator();
 
@@ -14,12 +15,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <LittleLemonHeader />
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
-          <Stack.Screen name="Login" component={LoginScreen} />
-        </Stack.Navigator>
-        <LittleLemonFooter />
+        <Stack.Navigator initialRouteName="WelcomeScreen" screenOptions={{headerTitleAlign:'center'}}>
+            <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="Subscribe" component={SubscribeScreen} />
+          </Stack.Navigator>
       </View>
     </NavigationContainer>
   );
@@ -28,7 +27,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#333333',
   },
   footerContainer: { backgroundColor: '#333333' },
 });
